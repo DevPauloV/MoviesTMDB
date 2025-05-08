@@ -1,31 +1,33 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom'; // Hook para obter parâmetros da URL
 import {
   BsGraphUp,
   BsWallet2,
   BsHourglassSplit,
   BsFillFileEarmarkTextFill
-} from 'react-icons/bs';
+} from 'react-icons/bs'; // Ícones para exibição de informações do filme
 
-import MovieCard from '../components/MovieCard';
+import MovieCard from '../components/MovieCard'; // Componente para exibir o filme
 
-import './Movie.css';
+import './Movie.css'; // Estilo da página Movie
 
+// URL base da API e chave de autenticação
 const moviesUrl = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 
-
 const Movie = () => {
-  const { id } = useParams();
-  const [movie, setMovie] = useState(null);
+  const { id } = useParams(); // Pega o ID do filme da URL
+  const [movie, setMovie] = useState(null); // Estado que armazena os dados do filme
 
+  // Função para buscar os dados do filme pela API
   const getMovie = async (url) => {
     const res = await fetch(url);
     const data = await res.json();
-    setMovie(data);
+    setMovie(data); // Armazena os dados no estado
   };
 
+  // Formata valores monetários para dólar americano
   const formatCurrency = (number) => {
     return number.toLocaleString('en-US', {
       style: 'currency',
@@ -33,12 +35,13 @@ const Movie = () => {
     });
   };
 
+  // Executa a busca do filme assim que o componente monta
   useEffect(() => {
     const movieUrl = `${moviesUrl}${id}?${apiKey}`;
     getMovie(movieUrl);
   }, []);
 
-
+  // Retorno do JSX com verificação se os dados já foram carregados
   return
 
   <div className='movie-page'>
@@ -47,36 +50,37 @@ const Movie = () => {
         <MovieCard movie={movie} showLink={false} />
         <p className='tagline'>{movie.tagline}</p>
 
-        //-----------------------------------------------------------
+        {/* Exibe o orçamento do filme */}
         <div className="info">
           <h3>
             <BsWallet2 /> Orçamento:
           </h3>
           <p>{formatCurrency(movie.budge)}</p>
         </div>
-        //-----------------------------------------------------------
+
+        {/* Exibe a receita do filme */}
         <div className="info">
           <h3>
             <BsGraphUp /> Receita:
           </h3>
           <p>{formatCurrency(movie.revenue)}</p>
         </div>
-        //-----------------------------------------------------------
+
+        {/* Exibe a duração do filme */}
         <div className="info">
           <h3>
             <BsHourglassSplit /> Duração:
           </h3>
           <p>{movie.runtime} minutos</p>
         </div>
-        //-----------------------------------------------------------
+
+        {/* Exibe a descrição do filme */}
         <div className="info description">
           <h3>
             <BsFillFileEarmarkTextFill /> Descrição:
           </h3>
           <p>{movie.overview}</p>
         </div>
-
-
       </>
     )}
   </div>;
