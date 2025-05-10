@@ -1,3 +1,4 @@
+/* Estilo do título principal da seção de filmes */
 .container .title {
     color: #fff;
     font-size: 2.5rem;
@@ -5,10 +6,12 @@
     margin: 2rem 0 1rem;
 }
 
+/* Destaque da parte da query na busca */
 .title .query-text {
     color: #f7d354;
 }
 
+/* Container que organiza os cards de filmes */
 .movies-container {
     display: flex;
     flex-wrap: wrap;
@@ -18,6 +21,7 @@
     margin: 0 auto;
 }
 
+/* Estilo individual dos cards de filmes */
 .movies-container div {
     width: 30%;
     color: #fff;
@@ -29,23 +33,24 @@
     padding: 1rem;
 }
 
+/* Ajusta a largura máxima das imagens dentro dos cards */
 .movies-container div img {
     max-width: 100%;
 }
 
-
+/* Margem inferior para os elementos internos do card */
 .movies-container div img,
 .movies-container div h2,
 .movies-container div p {
-
     margin-bottom: 1rem;
 }
 
+/* CORRIGIR: "svj" não é um seletor válido (possivelmente quis dizer "svg") */
 .movies-container div svj {
     color: #f7d354;
 }
 
-
+/* Estilo dos links/botões nos cards de filme */
 .movies-container div a {
     background-color: #f7d354;
     border: 2px solid #f7d354;
@@ -58,6 +63,7 @@
     font-weight: bold;
 }
 
+/* Efeito hover para os links/botões */
 .movies-container div a:hover {
     background-color: transparent;
     color: #f7d354;
