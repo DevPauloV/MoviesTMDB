@@ -45,8 +45,8 @@
     margin-bottom: 1rem;
 }
 
-/* CORRIGIR: "svj" não é um seletor válido (possivelmente quis dizer "svg") */
-.movies-container div svj {
+
+.movies-container div svg {
     color: #f7d354;
 }
 
