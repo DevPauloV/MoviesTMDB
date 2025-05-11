@@ -50,7 +50,7 @@ const Movie = () => {
         <MovieCard movie={movie} showLink={false} />
         <p className='tagline'>{movie.tagline}</p>
 
-        {/* Exibe o orçamento do filme */}
+       
         <div className="info">
           <h3>
             <BsWallet2 /> Orçamento:
@@ -58,15 +58,14 @@ const Movie = () => {
           <p>{formatCurrency(movie.budge)}</p>
         </div>
 
-        {/* Exibe a receita do filme */}
-        <div className="info">
+        {/* Exibe a receita do filme */} <div className="info">
           <h3>
             <BsGraphUp /> Receita:
           </h3>
           <p>{formatCurrency(movie.revenue)}</p>
         </div>
 
-        {/* Exibe a duração do filme */}
+        
         <div className="info">
           <h3>
             <BsHourglassSplit /> Duração:
@@ -74,7 +73,7 @@ const Movie = () => {
           <p>{movie.runtime} minutos</p>
         </div>
 
-        {/* Exibe a descrição do filme */}
+        
         <div className="info description">
           <h3>
             <BsFillFileEarmarkTextFill /> Descrição:

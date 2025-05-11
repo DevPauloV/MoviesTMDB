@@ -45,10 +45,10 @@ const Search = () => {
       </h2>
 
       <div className="movies-container">
-        /* Exibe texto enquanto os filmes estão carregando */
+       
         {movies.length === 0 && <p>Carregando...</p>}
         
-        /* Exibe os filmes retornados */
+        
         {movies.length > 0 && 
           movies.map((movie) => (
             <MovieCard key={movie.id} movie={movie} />

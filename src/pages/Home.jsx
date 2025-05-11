@@ -31,10 +31,10 @@ const Home = () => {
       <h2 className="title">Melhores filmes:</h2>
 
       <div className="movies-container">
-        /* Se ainda não carregou os filmes, mostra mensagem de carregamento */
+        
         {topMovies.length === 0 && <p>Carregando...</p>}
 
-        /* Se os filmes foram carregados, exibe os cartões de filmes */
+       
         {topMovies.length > 0 && topMovies.map((movie) => (
           <MovieCard key={movie.id} movie={movie} />
         ))}
