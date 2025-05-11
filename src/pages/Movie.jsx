@@ -35,11 +35,12 @@ const Movie = () => {
     });
   };
 
-  // Executa a busca do filme assim que o componente monta
+
   useEffect(() => {
     const movieUrl = `${moviesUrl}${id}?${apiKey}`;
     getMovie(movieUrl);
-  }, []);
+  }, [id]); 
+  
 
 
   return (
@@ -77,8 +78,9 @@ const Movie = () => {
             <p>{movie.overview}</p>
           </div>
         </>
-      )};
+      )}
     </div>
+
   );
 };
 
