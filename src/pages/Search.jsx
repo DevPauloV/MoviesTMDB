@@ -33,7 +33,7 @@ const Search = () => {
 
   // useEffect dispara a busca sempre que o `query` mudar
   useEffect(() => {
-    // Monta a URL da requisição com base na query e chave da API
+    
     const searchWithQueryURL = `${searchUrl}?api_key=${apiKey}&query=${query}&language=pt-BR`;
     getSearchedMovies(searchWithQueryURL); // Executa a busca
   }, [query]); // Executa novamente quando `query` mudar

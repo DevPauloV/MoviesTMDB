@@ -41,48 +41,46 @@ const Movie = () => {
     getMovie(movieUrl);
   }, []);
 
-  // Retorno do JSX com verificação se os dados já foram carregados
-  return
 
-  <div className='movie-page'>
-    {movie && (
-      <>
-        <MovieCard movie={movie} showLink={false} />
-        <p className='tagline'>{movie.tagline}</p>
+  return (
+    <div className='movie-page'>
+      {movie && (
+        <>
+          <MovieCard movie={movie} showLink={false} />
+          <p className='tagline'>{movie.tagline}</p>
 
-       
-        <div className="info">
-          <h3>
-            <BsWallet2 /> Orçamento:
-          </h3>
-          <p>{formatCurrency(movie.budge)}</p>
-        </div>
+          <div className="info">
+            <h3>
+              <BsWallet2 /> Orçamento:
+            </h3>
+            <p>{formatCurrency(movie.budget)}</p>
+          </div>
 
-        {/* Exibe a receita do filme */} <div className="info">
-          <h3>
-            <BsGraphUp /> Receita:
-          </h3>
-          <p>{formatCurrency(movie.revenue)}</p>
-        </div>
+          <div className="info">
+            <h3>
+              <BsGraphUp /> Receita:
+            </h3>
+            <p>{formatCurrency(movie.revenue)}</p>
+          </div>
 
-        
-        <div className="info">
-          <h3>
-            <BsHourglassSplit /> Duração:
-          </h3>
-          <p>{movie.runtime} minutos</p>
-        </div>
+          <div className="info">
+            <h3>
+              <BsHourglassSplit /> Duração:
+            </h3>
+            <p>{movie.runtime} minutos</p>
+          </div>
 
-        
-        <div className="info description">
-          <h3>
-            <BsFillFileEarmarkTextFill /> Descrição:
-          </h3>
-          <p>{movie.overview}</p>
-        </div>
-      </>
-    )}
-  </div>;
+          <div className="info description">
+            <h3>
+              <BsFillFileEarmarkTextFill /> Descrição:
+            </h3>
+            <p>{movie.overview}</p>
+          </div>
+        </>
+      )};
+    </div>
+  );
 };
 
 export default Movie;
+
