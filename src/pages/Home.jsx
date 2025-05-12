@@ -2,15 +2,15 @@ import React, { useState, useEffect } from 'react';
 import MovieCard from '../components/MovieCard';
 import './MoviesGrid.css';
 
-// URL base da API e chave de autenticação vinda do arquivo .env
+
 const moviesUrl = import.meta.env.VITE_API;
 const apiKey = import.meta.env.VITE_API_KEY;
 
 const Home = () => {
-  // Estado para armazenar a lista de filmes mais bem avaliados
+  
   const [topMovies, setTopMovies] = useState([]);
 
-  // Função assíncrona que busca os filmes da API
+ 
   const getTopRatedMovies = async (url) => {
     const res = await fetch(url); // Faz a requisição para a URL fornecida
     const data = await res.json(); // Converte a resposta para JSON
