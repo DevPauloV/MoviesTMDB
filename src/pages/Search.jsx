@@ -34,7 +34,9 @@ const Search = () => {
   // useEffect dispara a busca sempre que o `query` mudar
   useEffect(() => {
     
-    const searchWithQueryURL = `${searchUrl}?api_key=${apiKey}&query=${query}&language=pt-BR`;
+    const searchWithQueryURL = `${searchUrl}?${apiKey}&query=${query}&language=pt-BR`;
+
+
     getSearchedMovies(searchWithQueryURL); // Executa a busca
   }, [query]); // Executa novamente quando `query` mudar
 

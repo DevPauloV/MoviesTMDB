@@ -20,7 +20,9 @@ const Home = () => {
   // useEffect executa a função quando o componente é montado
   useEffect(() => {
     // Monta a URL completa com a chave da API e o parâmetro de idioma
-    const topRatedUrl = `${moviesUrl}top_rated?api_key=${apiKey}&language=pt-BR`;
+    const topRatedUrl = `${moviesUrl}top_rated?${apiKey}&language=pt-BR`;
+
+
 
     // Chama a função para buscar os filmes
     getTopRatedMovies(topRatedUrl);
